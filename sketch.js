@@ -19,16 +19,17 @@ function setup() {
   boy1 = createSprite(230,200,20,10);
   boy1.scale = 0.1
   boy1.addAnimation("boytraveling", boy);
-  wall1 = createSprite(100,100)
+  wall1 = createSprite(10,200,20,400);
   wall1.visible = false
-  wall2 = createSprite(400,400)
-  wall2.visible = false 
+  wall2 = createSprite(390,200,20,400);
+  wall2.visible = false
 }
 
 function draw() {
   background(0);
   boy1.x = World.mouseX;
-
+  boy1.bounceOff(wall1);
+  boy1.bounceOff(wall2);
   if(path.y > 400 ){
     path.y = height/2;
 }
